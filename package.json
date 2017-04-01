@@ -23,7 +23,6 @@
     "good-squeeze": "^5.0.2"
   },
   "devDependencies": {
-
     "nodemon": "^1.11.0"
   }
 }
