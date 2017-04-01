@@ -6,7 +6,8 @@
   "author": "Clinton Yeboah",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index",
+    "start": "node index"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
