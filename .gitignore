@@ -39,6 +39,5 @@ jspm_packages
 
 # Customs
 
-uploads
 .vscode
 yarn.lock
