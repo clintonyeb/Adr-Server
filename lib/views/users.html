@@ -1,0 +1,68 @@
+<div class="columns">
+
+    <div class="column"></div>
+
+    <div class="column is-8">
+        {{#each users}}
+        <div class="box">
+            <article class="media">
+
+                <div class="media-content">
+                    <div class="content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <strong>Name: {{this.fullName}} </strong>
+                            </div>
+                            <div class="column is-narrow">
+                                <small>Created: {{moment this.date}}</small>
+                            </div>
+                        </div>
+                        <table class="table is-striped">
+                            <tbody>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <td>{{this.fullName}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email Address</th>
+                                    <td>{{this.username}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Mobile Number</th>
+                                    <td>{{this.mobile}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>{{this.organization}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Designation</th>
+                                    <td>{{this.designation}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Account Created</th>
+                                    <td>{{this.date}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Enabled</th>
+                                    <td>{{this.enabled}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form method="POST" action="/api/users/{{this.username}}/{{this.enabled}}">
+                            <div class="block is-pulled-right">
+                            <button type="submit" class="button {{accbutton this.enabled}}"> {{account this.enabled}} Account</button> 
+                        </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="column"></div>
+</div>

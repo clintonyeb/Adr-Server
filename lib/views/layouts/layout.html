@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ADR Admin</title>
+  <link href="/assets/bulma.css" type="text/css" rel="stylesheet">
+  <style>
+    .maincontent {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item">
+          <!--<img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">-->
+          <h2>ADR Admin</h2>
+
+          <a class="nav-item is-tab is-hidden-mobile {{menu page 'index'}}" href="/admin">Home</a>
+          <a class="nav-item is-tab is-hidden-mobile {{menu page 'users'}}" href="/admin/users">Users</a>
+          <a class="nav-item is-tab is-hidden-mobile {{menu page 'serverstatus'}}" href="/admin/server-status">Server Status</a>
+      </div>
+      <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab is-hidden-tablet {{menu page 'index'}}" href="/admin">Home</a>
+        <a class="nav-item is-tab is-hidden-tablet {{menu page 'users'}}" href="/admin/users">Users</a>
+        <a class="nav-item is-tab is-hidden-tablet {{menu page 'serverstatus'}}" href="/admin/server-status">Server Status</a>
+
+        <a class="nav-item is-tab">
+          <figure class="image is-16x16" style="margin-right: 8px;">
+            <img src="http://bulma.io/images/jgthms.png">
+          </figure>
+          Log out
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container maincontent">
+    {{{content}}}
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <strong>ADR Admin:</strong> built and maintained by <a href="#">Clinton Yeboah</a>, with JavaScript😘
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
