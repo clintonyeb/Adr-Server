@@ -1,0 +1,46 @@
+<div class="columns">
+
+    <div class="column"></div>
+
+    <div class="column is-8">
+        {{#each reports}}
+        <div class="box">
+            <article class="media">
+
+                <div class="media-content">
+                    <div class="content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <strong>Name: {{this.patientName}} </strong> {{#if this.patientId}} (<small>{{this.patientId}}</small>)
+                                {{/if}}
+                            </div>
+                            <div class="column is-narrow">
+                                <small>Created: {{moment this.date}}</small>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            {{#each this.files}}
+                            <div class="column">
+                                <figure class="image is-square">
+                                    <a href="api/images/{{this}}"> <img src="api/images/{{this}}"> </a>
+                                </figure>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <blockquote>
+                            <p>Report submitted by: <a href="api/users/{{this.userId}}">{{this.userId}}</a></p>
+                        </blockquote>
+
+
+                    </div>
+                </div>
+            </article>
+
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="column"></div>
+</div>

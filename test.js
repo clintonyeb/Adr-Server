@@ -1,0 +1,1 @@
+console.log('/admin/dssffs'.indexOf('c'));
