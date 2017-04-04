@@ -11,6 +11,10 @@
       margin-top: 20px;
       margin-bottom: 20px;
     }
+
+    .message {
+      color: orangered;
+    }
   </style>
 </head>
 
@@ -35,11 +39,11 @@
         <a class="nav-item is-tab is-hidden-tablet {{menu file 'users'}}" href="/admin/users">Users</a>
         <a class="nav-item is-tab is-hidden-tablet {{menu file 'serverstatus'}}" href="/admin/server-status">Server Status</a>
 
-        <a class="nav-item is-tab">
+        <a class="nav-item is-tab" href="/admin/logout">
           <figure class="image is-16x16" style="margin-right: 8px;">
             <img src="http://bulma.io/images/jgthms.png">
           </figure>
-          Log out
+          {{logoutButton file}}
         </a>
       </div>
     </div>

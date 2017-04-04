@@ -1,6 +1,10 @@
 <div class="columns">
 
-    <div class="column"></div>
+    <div class="column">
+        <nav class="pagination is-medium">
+            <a href="/admin/users/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
+        </nav>
+    </div>
 
     <div class="column is-8">
         {{#each users}}
@@ -64,5 +68,9 @@
         {{/each}}
     </div>
 
-    <div class="column"></div>
+    <div class="column">
+        <nav class="pagination is-medium">
+            <a href="/admin/users/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
+        </nav>
+    </div>
 </div>

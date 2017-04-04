@@ -1,43 +1,55 @@
-<div class="container">
-    <div class="columns">
-        <div class="column">
+<div class="columns">
+
+    <div class="column">
+        <nav class="pagination is-medium">
+            <a href="/admin/reports/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
+        </nav>
+    </div>
+
+    <div class="column is-8">
+        {{#each reports}}
+        <div class="box">
+            <article class="media">
+
+                <div class="media-content">
+                    <div class="content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <strong>Name: {{this.patientName}} </strong> {{#if this.patientId}} (<small>{{this.patientId}}</small>)
+                                {{/if}}
+                            </div>
+                            <div class="column is-narrow">
+                                <small>Created: {{moment this.date}}</small>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            {{#each this.files}}
+                            <div class="column">
+                                <figure class="image is-square">
+                                    <a href="images/{{this}}"> <img src="images/{{this}}"> </a>
+                                </figure>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <blockquote>
+                            <p>Report submitted by: <a href="api/users/{{this.userId}}">{{this.userId}}</a></p>
+                            <p>Created at: {{this.date}}</p>
+                        </blockquote>
+
+
+                    </div>
+                </div>
+            </article>
 
         </div>
-        <div class="column is-8">
-            <form action="/admin/login" method="POST" class="box">
-                <div class="field">
-                    <label class="label">Email</label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input" type="email" placeholder="example@domain.com" value="" name="username" required>
-                        <span class="icon is-small">
-      <i class="fa fa-warning"></i>
-    </span>
-                    </p>
-                </div>
+        {{/each}}
+    </div>
 
-                <div class="field">
-                    <label class="label">Password</label>
-                    <p class="control has-icon has-icon-right">
-                        <input class="input" type="password" value="" placeholder="password" name="password" required>
-                        <span class="icon is-small">
-      <i class="fa fa-warning"></i>
-    </span>
-                    </p>
-                </div>
-
-                <div class="field is-grouped">
-                    <p class="control">
-                        <button class="button is-primary" type="submit">Log in</button>
-                    </p>
-                    <p class="control">
-                        <button class="button is-link">Cancel</button>
-                    </p>
-                </div>
-
-            </form>
-        </div>
-        <div class="column">
-
-        </div>
+    <div class="column">
+        <nav class="pagination is-medium">
+            <a href="/admin/reports/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
+        </nav>
     </div>
 </div>

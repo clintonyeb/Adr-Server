@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="columns">
+        <div class="column">
+
+        </div>
+        <div class="column is-8">
+
+            <form action="/admin/login" method="POST" class="box">
+                
+                <p class="has-text-centered message">{{message}}</p>
+                
+                <div class="field">
+                    <label class="label">Email</label>
+                    <p class="control has-icon has-icon-right">
+                        <input class="input" type="email" placeholder="example@domain.com" value="{{data.username}}" name="username" required>
+                        <span class="icon is-small">
+      <i class="fa fa-warning"></i>
+    </span>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <p class="control has-icon has-icon-right">
+                        <input class="input" type="password" value="" placeholder="password" name="password" required>
+                        <span class="icon is-small">
+      <i class="fa fa-warning"></i>
+    </span>
+                    </p>
+                </div>
+
+                <div class="field is-grouped">
+                    <p class="control">
+                        <button class="button is-primary" type="submit">Log in</button>
+                    </p>
+                </div>
+
+            </form>
+        </div>
+        <div class="column">
+
+        </div>
+    </div>
+</div>
