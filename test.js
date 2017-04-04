@@ -1,1 +1,5 @@
-console.log('/admin/dssffs'.indexOf('c'));
+let c = function (t) {
+     d: 'hi'
+}
+
+console.log(c.d);
