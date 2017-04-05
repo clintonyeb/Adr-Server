@@ -2,7 +2,7 @@
 
     <div class="column">
         <nav class="pagination is-medium">
-            <a href="/admin/reports/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
+            <a href="admin/reports/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
         </nav>
     </div>
 
@@ -28,7 +28,7 @@
                             {{#each this.files}}
                             <div class="column">
                                 <figure class="image is-square">
-                                    <a href="images/{{this}}"> <img src="images/{{this}}"> </a>
+                                    <a href="admin/images/{{this}}"> <img src="admin/images/{{this}}"> </a>
                                 </figure>
                             </div>
                             {{/each}}
@@ -49,7 +49,7 @@
 
     <div class="column">
         <nav class="pagination is-medium">
-            <a href="/admin/reports/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
+            <a href="admin/reports/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
         </nav>
     </div>
 </div>
