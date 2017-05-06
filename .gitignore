@@ -42,5 +42,3 @@ jspm_packages
 .vscode
 yarn.lock
 test
-lib/uploads/*
-!lib/uploads/README.md 
