@@ -8,40 +8,39 @@
 
     <div class="column is-8">
         {{#each reports}}
-        <a href="admin/report/{{this._id}}" class="report-link">
-            <article class="media">
-                <figure class="media-left">
-                    <p class="image is-64x64">
-                        <img src="/assets/images/nurse.svg" height="64px" alt="report image">
-                    </p>
-                </figure>
+        <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="/assets/images/nurse.svg" height="64px" alt="report image">
+                </p>
+            </figure>
 
-                <div class="media-content">
-                    <div class="content">
+            <div class="media-content">
+                <div class="content">
 
-                        <div class="columns">
-                            <div class="column is-8">
-                                <p>
-                                    <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added
-                                    a new report
-                                </p>
-                                <p>
-                                    Patient: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}
-                                    | {{this.patientId}} {{/if}}
-                                </p>
-                            </div>
-                            <div class="column">
-                                <small><i>{{moment this.date}}</i></small>
-                            </div>
+                    <div class="columns">
+                        <div class="column is-8">
+                            <p>
+                                <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added a
+                                new report
+                            </p>
+                            <p>
+                                Patient: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}
+                                | {{this.patientId}} {{/if}}
+                            </p>
                         </div>
-
+                        <div class="column">
+                            <small><i>{{moment this.date}}</i></small>
+                            <a class="button is-primary" href="admin/report/{{this._id}}">Primary</a>
+                        </div>
                     </div>
+
                 </div>
-                <div class="media-right">
-                    <button class="delete"></button>
-                </div>
-            </article>
-        </a>
+            </div>
+            <div class="media-right">
+                <button class="delete"></button>
+            </div>
+        </article>
         {{/each}}
     </div>
 
