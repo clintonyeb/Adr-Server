@@ -6,8 +6,8 @@ html, body {
     width: 100%;
 }
 .main-content {
-      margin: 0 20px;
-      min-height: 80%;
+      margin: 20px 0px;
+      min-height: 90%;
     }
 
 .message {
