@@ -10,36 +10,36 @@
         {{#each reports}}
         <div class="box">
             <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <i class="fa fa-user-md" aria-hidden="true"></i>
+                    </p>
+                </figure>
 
                 <div class="media-content">
                     <div class="content">
 
                         <div class="columns">
                             <div class="column">
-                                <strong>Name: {{this.patientName}} </strong> {{#if this.patientId}} (<small>{{this.patientId}}</small>)
-                                {{/if}}
+                                <p>
+                                    <strong><a href="admin/users/{{this.userId}}">{{this.userName}}</a></strong>
+                                </p>
+                            </div>
+                            <div class="column">
+                                <p>
+                                    <strong><a href="admin/users/{{this.userId}}">{{this.patientName}}</a></strong> {{#if
+                                    this.patientId}} (
+                                    <small>{{this.patientId}}</small>) {{/if}}
+                                </p>
                             </div>
                             <div class="column is-narrow">
-                                <small>Created: {{moment this.date}}</small>
+                                <small>{{moment this.date}}</small>
                             </div>
                         </div>
-
-                        <div class="columns">
-                            {{#each this.files}}
-                            <div class="column">
-                                <figure class="image is-128x128" style="width: 100%; max-height: 70%;">
-                                    <a href="admin/images/{{this}}"> <img src="admin/images/{{this}}/thumbs"> </a>
-                                </figure>
-                            </div>
-                            {{/each}}
-                        </div>
-                        <blockquote>
-                            <p>Report submitted by: <a href="admin/users/{{this.userId}}">{{this.userId}}</a></p>
-                            <p>Created at: {{this.date}}</p>
-                            ` </blockquote>
-
-
                     </div>
+                </div>
+                <div class="media-right">
+                    <button class="delete"></button>
                 </div>
             </article>
 
