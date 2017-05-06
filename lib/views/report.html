@@ -1,1 +1,26 @@
-Reports here
+<div class="columns">
+
+    <div class="column">
+        <article class="box">
+            <div class="columns">
+                <div class="column is-8">
+                    <p>
+                        <strong><a href="admin/users/{{report.userId}}">{{report.userFullName}}</a></strong> added a new report
+                    </p>
+                    <p>
+                        Patient: {{report.patientName}} {{#if report.patientId}} (Id: <i>{{report.patientId}}</i>) {{/if}}
+                    </p>
+                </div>
+                <div class="column">
+                    <p>
+                        <small><i>{{moment report.date}}</i></small>
+                    </p>
+                    <p>
+                        <a class="button is-primary is-outlined is-small">View all reports</a>
+                    </p>
+                </div>
+            </div>
+
+        </article>
+    </div>
+</div>
