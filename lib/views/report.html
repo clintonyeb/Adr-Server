@@ -22,13 +22,14 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column">
-                    {{#each report.files}}
+                {{#each report.files}}
+                <div class="column is-6">
                     <figure class="image is-square">
-                        <img src="/admin/{{this}}" alt="report image">
+                        <img src="/admin/images/{{this}}" height="100%" width="100%" alt="report image">
                     </figure>
-                    {{/each}}
                 </div>
+                {{/each}}
+
             </div>
 
         </article>
