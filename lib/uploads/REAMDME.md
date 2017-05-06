@@ -1,1 +1,0 @@
-## Will contain all documents uploaded by users here
