@@ -2,7 +2,7 @@
 
     <div class="column">
         <nav class="pagination is-medium">
-            <a href="admin/reports/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
+            <a href="admin/reports/{{minus page}}" class="pagination-previous" {{prevButton page}}>Previous</a>
         </nav>
     </div>
 
@@ -27,16 +27,18 @@
                         <div class="columns">
                             {{#each this.files}}
                             <div class="column">
-                                <figure class="image is-128x128">
-                                    <a href="admin/images/{{this}}"> <img src="admin/images/{{this}}/thumbs"> </a>
-                                </figure>
+                                <div class="container">
+                                    <figure class="image is-128x128">
+                                        <a href="admin/images/{{this}}"> <img src="admin/images/{{this}}/thumbs"> </a>
+                                    </figure>
+                                </div>
                             </div>
                             {{/each}}
                         </div>
                         <blockquote>
                             <p>Report submitted by: <a href="admin/users/{{this.userId}}">{{this.userId}}</a></p>
                             <p>Created at: {{this.date}}</p>
- `                      </blockquote>
+                            ` </blockquote>
 
 
                     </div>
