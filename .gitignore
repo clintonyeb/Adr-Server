@@ -43,4 +43,4 @@ jspm_packages
 yarn.lock
 test
 lib/uploads/*
-lib/uploads/README.md 
+!lib/uploads/README.md 
