@@ -18,6 +18,8 @@
     /* Report styles */
 .media {
     padding: 5px 10px;
+    margin: 0;
+    border-radius: 3px;
 }
 .media:hover {
     
