@@ -3,21 +3,31 @@
     <div class="column">
         <article class="box">
             <div class="columns">
-                <div class="column is-8">
+                <div class="column">
                     <p>
-                        <strong><a href="admin/users/{{report.userId}}">{{report.userFullName}}</a></strong> added a new report
+                        <strong><a href="admin/users/{{report.userId}}">{{report.userFullName}}</a></strong> added a new
+                        report
                     </p>
                     <p>
                         Patient: {{report.patientName}} {{#if report.patientId}} (Id: <i>{{report.patientId}}</i>) {{/if}}
                     </p>
+                    <p>
+                        <small><i>{{report.date}}</i></small>
+                    </p>
                 </div>
-                <div class="column">
+                <div class="column is-narrow">
                     <p>
                         <small><i>{{moment report.date}}</i></small>
                     </p>
-                    <p>
-                        <a class="button is-primary is-outlined is-small">View all reports</a>
-                    </p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    {{#each report.files}}
+                    <figure class="image is-square">
+                        <img src="/admin/{{this}}" alt="report image">
+                    </figure>
+                    {{/each}}
                 </div>
             </div>
 
