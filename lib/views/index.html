@@ -11,7 +11,7 @@
         <article class="media">
             <figure class="media-left">
                 <p class="image is-64x64">
-                    <img src="/assets/images/small-boy.svg" height="64px" alt="report image">
+                    <img src="/assets/images/nurse.svg" height="64px" alt="report image">
                 </p>
             </figure>
 
@@ -19,7 +19,7 @@
                 <div class="content">
 
                     <div class="columns">
-                        <div class="column">
+                        <div class="column is-8">
                             <p>
                                 <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added a
                                 new report
@@ -31,7 +31,7 @@
                                 Patient Id: {{#if this.patientId}} {{this.patientId}} {{/if}}
                             </p>
                         </div>
-                        <div class="column is-narrow">
+                        <div class="column">
                             <small>{{moment this.date}}</small>
                         </div>
                     </div>
