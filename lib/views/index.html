@@ -2,7 +2,7 @@
 
     <div class="column">
         <nav class="pagination is-medium">
-            <a href="admin/reports/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
+            <a href="admin/reports/{{minus page}}" class="pagination-previous" {{prevButton page}}>Previous</a>
         </nav>
     </div>
 
@@ -28,7 +28,7 @@
                             {{#each this.files}}
                             <div class="column">
                                 <figure class="image is-square">
-                                    <a href="admin/images/{{this}}"> <img src="admin/images/{{this}}" alt="report image"> </a>
+                                    <a href="admin/images/{{this}}"> <img src="getImageString(this)" alt="report image"> </a>
                                 </figure>
                             </div>
                             {{/each}}
@@ -36,7 +36,7 @@
                         <blockquote>
                             <p>Report submitted by: <a href="admin/users/{{this.userId}}">{{this.userId}}</a></p>
                             <p>Created at: {{this.date}}</p>
- `                      </blockquote>
+                            ` </blockquote>
 
 
                     </div>
@@ -53,3 +53,16 @@
         </nav>
     </div>
 </div>
+
+<script>
+    function getImageString(url) {
+        axios.get(url)
+            .then(function (response) {
+                return response.body
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+</script>
