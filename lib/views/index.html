@@ -8,45 +8,40 @@
 
     <div class="column is-8">
         {{#each reports}}
-        <div class="box">
-            <article class="media">
-                <figure class="media-left">
-                    <p class="image is-64x64">
-                        <img src="/assets/images/adrlogo.png" height="64px" alt="report image">
-                    </p>
-                </figure>
+        <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="/assets/images/small-boy.svg" height="64px" alt="report image">
+                </p>
+            </figure>
 
-                <div class="media-content">
-                    <div class="content">
+            <div class="media-content">
+                <div class="content">
 
-                        <div class="columns">
-                            <div class="column is-three-quarters">
-                                <p>
-                                    <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added
-                                    a new report
-                                </p>
-                                <hr>
-                                <p>
-                                    Patient Name: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> 
-                                </p>
-                                <p>
-                                    Patient Id: {{#if this.patientId}}
-                                    {{this.patientId}} {{/if}}
-                                </p>
-                            </div>
-                            <div class="column">
-                                <small>{{moment this.date}}</small>
-                            </div>
+                    <div class="columns">
+                        <div class="column">
+                            <p>
+                                <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added a
+                                new report
+                            </p>
+                            <p>
+                                Patient Name: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a>
+                            </p>
+                            <p>
+                                Patient Id: {{#if this.patientId}} {{this.patientId}} {{/if}}
+                            </p>
+                        </div>
+                        <div class="column is-narrow">
+                            <small>{{moment this.date}}</small>
                         </div>
                     </div>
                 </div>
-                <div class="media-right">
-                    <button class="delete"></button>
-                </div>
-            </article>
-
-        </div>
-        {{/each}}
+            </div>
+            <div class="media-right">
+                <button class="delete"></button>
+            </div>
+        </article>
+        <hr> {{/each}}
     </div>
 
     <div class="column">
