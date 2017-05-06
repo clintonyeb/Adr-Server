@@ -25,14 +25,12 @@
                                 new report
                             </p>
                             <p>
-                                Patient Name: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a>
-                            </p>
-                            <p>
-                                Patient Id: {{#if this.patientId}} {{this.patientId}} {{/if}}
+                                Patient: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}(
+                                {{this.patientId}} ){{/if}}
                             </p>
                         </div>
                         <div class="column">
-                            <small>{{moment this.date}}</small>
+                            <small><i>{{moment this.date}}</i></small>
                         </div>
                     </div>
                 </div>
