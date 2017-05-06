@@ -17,22 +17,23 @@
 
             <div class="media-content">
                 <div class="content">
-
-                    <div class="columns">
-                        <div class="column is-8">
-                            <p>
-                                <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added a
-                                new report
-                            </p>
-                            <p>
-                                Patient: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}(
-                                {{this.patientId}} ){{/if}}
-                            </p>
+                    <a href="admin/report/{{this._id}}">
+                        <div class="columns">
+                            <div class="column is-8">
+                                <p>
+                                    <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added
+                                    a new report
+                                </p>
+                                <p>
+                                    Patient: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}
+                                    | {{this.patientId}} {{/if}}
+                                </p>
+                            </div>
+                            <div class="column">
+                                <small><i>{{moment this.date}}</i></small>
+                            </div>
                         </div>
-                        <div class="column">
-                            <small><i>{{moment this.date}}</i></small>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="media-right">
