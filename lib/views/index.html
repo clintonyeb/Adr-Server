@@ -8,16 +8,17 @@
 
     <div class="column is-8">
         {{#each reports}}
-        <article class="media">
-            <figure class="media-left">
-                <p class="image is-64x64">
-                    <img src="/assets/images/nurse.svg" height="64px" alt="report image">
-                </p>
-            </figure>
+        <a href="admin/report/{{this._id}}">
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img src="/assets/images/nurse.svg" height="64px" alt="report image">
+                    </p>
+                </figure>
 
-            <div class="media-content">
-                <div class="content">
-                    <a href="admin/report/{{this._id}}">
+                <div class="media-content">
+                    <div class="content">
+
                         <div class="columns">
                             <div class="column is-8">
                                 <p>
@@ -33,13 +34,14 @@
                                 <small><i>{{moment this.date}}</i></small>
                             </div>
                         </div>
-                    </a>
+
+                    </div>
                 </div>
-            </div>
-            <div class="media-right">
-                <button class="delete"></button>
-            </div>
-        </article>
+                <div class="media-right">
+                    <button class="delete"></button>
+                </div>
+            </article>
+        </a>
         {{/each}}
     </div>
 
