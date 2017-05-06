@@ -20,24 +20,22 @@
                     <div class="content">
 
                         <div class="columns">
-                            <div class="column">
+                            <div class="column is-three-quarters">
                                 <p>
                                     <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added
                                     a new report
                                 </p>
+                                <hr>
+                                <p>
+                                    Patient Name: <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> 
+                                </p>
+                                <p>
+                                    Patient Id: {{#if this.patientId}}
+                                    {{this.patientId}} {{/if}}
+                                </p>
                             </div>
                             <div class="column">
                                 <small>{{moment this.date}}</small>
-                            </div>
-                        </div>
-
-                        <div class="columns">
-                            <div class="column">
-                                <p>
-                                    <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}
-                                    (
-                                    <small>{{this.patientId}}</small>) {{/if}}
-                                </p>
                             </div>
                         </div>
                     </div>
