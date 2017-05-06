@@ -22,18 +22,22 @@
                         <div class="columns">
                             <div class="column">
                                 <p>
-                                    <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong>
+                                    <strong><a href="admin/users/{{this.userId}}">{{this.userFullName}}</a></strong> added
+                                    a new report
                                 </p>
                             </div>
                             <div class="column">
+                                <small>{{moment this.date}}</small>
+                            </div>
+                        </div>
+
+                        <div class="columns">
+                            <div class="column">
                                 <p>
-                                    <strong><a href="admin/users/{{this.userId}}">{{this.patientName}}</a></strong> {{#if
-                                    this.patientId}} (
+                                    <a href="admin/users/{{this.userId}}">{{this.patientName}}</a> {{#if this.patientId}}
+                                    (
                                     <small>{{this.patientId}}</small>) {{/if}}
                                 </p>
-                            </div>
-                            <div class="column is-narrow">
-                                <small>{{moment this.date}}</small>
                             </div>
                         </div>
                     </div>
