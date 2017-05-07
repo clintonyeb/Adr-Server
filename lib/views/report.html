@@ -19,13 +19,16 @@
                     <p>
                         <small><i>{{moment report.date}}</i></small>
                     </p>
+                    <p>
+                        <a class="button is-primary is-outlined is-small" href="javascript:history.back()">Go back</a>
+                    </p>
                 </div>
             </div>
             <div class="columns is-multiline">
                 {{#each report.files}}
                 <div class="column is-6">
                     <figure class="image is-square">
-                       <a href="/admin/images/{{this}}" target="_blank"><img src="/admin/images/{{this}}" height="100%" width="100%" alt="report image"></a> 
+                        <a href="/admin/images/{{this}}" target="_blank"><img src="/admin/images/{{this}}" height="100%" width="100%" alt="report image"></a>
                     </figure>
                 </div>
                 {{/each}}
