@@ -1,84 +1,51 @@
 <div class="columns">
 
     <div class="column">
-        <nav class="pagination is-medium">
-            <a href="/admin/users/{{minus page}}" class="pagination-previous"  {{prevButton page}}>Previous</a>
+        <nav class="pagination is-small">
+            <a href="/admin/users/{{minus page}}" class="pagination-previous" {{prevButton page}}>Previous</a>
         </nav>
     </div>
 
     <div class="column is-8">
         {{#each users}}
-        <div class="box">
-            <article class="media">
-
-                <div class="media-content">
-                    <div class="content">
-
-                        <div class="columns">
-                            <div class="column">
-                                <strong>Name: {{this.fullName}} </strong>
-                            </div>
-                            <div class="column is-narrow">
-                                <small>Created: {{moment this.date}}</small>
-                            </div>
+        <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                    <img src="/assets/images/nurse.svg" height="64px" width="64px" alt="report image">
+                </p>
+            </figure>
+            <div class="media-content">
+                <div class="content">
+                    <div class="columns">
+                        <div class="column is-8">
+                            <p>
+                                <strong>Name: {{this.fullName}}</strong>
+                            </p>
+                            <p>
+                                Enabled: <span style="color: {{statusText this.enabled}};">{{this.enabled}}</span>  
+                            </p>
                         </div>
-                        <table class="table is-striped">
-                            <tbody>
-                                <tr>
-                                    <th>Full Name</th>
-                                    <td>{{this.fullName}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Email Address</th>
-                                    <td>{{this.username}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Permissions</th>
-                                    <td>{{this.role}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Mobile Number</th>
-                                    <td>{{this.mobile}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Organization</th>
-                                    <td>{{this.organization}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Designation</th>
-                                    <td>{{this.designation}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Account Created</th>
-                                    <td>{{this.date}}</td>
-                                </tr>
-                                <tr>
-                                    <th>Enabled</th>
-                                    <td>{{this.enabled}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <form method="POST" action="/admin/users/{{this.username}}/{{this.enabled}}">
-                            <div class="block is-pulled-right">
-                            <button type="submit" class="button {{accbutton this.enabled}}"> {{account this.enabled}} Account</button> 
+                        <div class="column">
+                            <p>
+                                <small>Created: <i>{{moment this.date}}</i></small>
+                            </p>
+                            <p>
+                                <a class="button is-primary is-outlined is-small" href="/admin/users/{{this._id}}">View user</a>
+                            </p>
                         </div>
-                        </form>
-                        
                     </div>
                 </div>
-            </article>
-
-        </div>
+            </div>
+            <div class="media-right">
+                <button class="delete"></button>
+            </div>
+        </article>
         {{/each}}
     </div>
 
     <div class="column">
-        <nav class="pagination is-medium">
+        <nav class="pagination is-small">
             <a href="/admin/users/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
         </nav>
     </div>
 </div>
-
-<script> 
-  document.title = 'Users | ADR-ADMIN';
-<{{!}}/script>

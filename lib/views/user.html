@@ -1,0 +1,186 @@
+<div class="columns">
+
+    <div class="column">
+
+    </div>
+
+    <div class="column is-8">
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <header class="modal-card-head">
+                    <p class="modal-card-title"></p>
+                    <button class="delete class close-modal-ref"></button>
+                </header>
+                <section class="modal-card-body"></section>
+                <footer class="modal-card-foot">
+                    <a class="button" id="deactivate"></a>
+                    <a class="button close-modal-ref is-success">Cancel</a>
+                    <span class="modal-message"></span>
+                </footer>
+            </div>
+            <button class="modal-close close-modal-ref"></button>
+        </div>
+
+        <div class="box">
+            <article class="media">
+
+                <div class="media-content">
+                    <div class="content">
+
+                        <div class="columns">
+                            <div class="column">
+                                <strong>Name: {{user.fullName}} </strong>
+                            </div>
+                            <div class="column is-narrow">
+                                <small>Created: {{moment user.date}}</small>
+                            </div>
+                        </div>
+                        <table class="table is-striped">
+                            <tbody>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <td>{{user.fullName}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Email Address</th>
+                                    <td>{{user.username}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Permissions</th>
+                                    <td>{{user.role}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Mobile Number</th>
+                                    <td>{{user.mobile}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Organization</th>
+                                    <td>{{user.organization}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Designation</th>
+                                    <td>{{user.designation}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Account Created</th>
+                                    <td>{{user.date}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Enabled</th>
+                                    <td>{{user.enabled}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <form class="deactForm">
+                            <input type="hidden" name="username" value="{{user.username}}">
+                            <input type="hidden" name="enabled" value="{{user.enabled}}">
+                            <div class="block is-pulled-right">
+                                <button type="submit" class="button {{accbutton user.enabled}}" name="submitBtn"> {{account user.enabled}} Account</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </div>
+
+    <div class="column">
+
+    </div>
+</div>
+
+<script>
+    "use strict";
+
+    // set page title
+    document.title = 'Users | ADR-ADMIN';
+
+    function windowLoaded() {
+
+        // page elements
+        var deactivate = document.getElementById('deactivate');
+        var closeModals = document.querySelectorAll('.close-modal-ref');
+        var deactivateForms = document.querySelectorAll('.deactForm');
+        var modal = document.querySelector('.modal');
+        var submitBtn = null;
+        var username = null;
+        var enabled = null;
+
+        // set up events
+        deactivate.addEventListener('click', deactivateAccount);
+        closeModals.forEach(function (close) {
+            close.addEventListener('click', closeModal);
+        })
+
+        deactivateForms.forEach(function (form) {
+            form.addEventListener('submit', formSubmitted);
+        });
+
+        // define functions
+        function deactivateAccount(e) {
+
+            if (!username && !enabled) return closeModal();
+            // post data to server
+            axios.post('/admin/users/enable', {
+                username: username.value,
+                enabled: enabled.value
+            })
+                .then(function (response) {
+                    /*if (response.data.enabled == 'true') {
+                        submitBtn.textContent = 'Disable Account';
+                        submitBtn.classList.remove('is-primary');
+                        submitBtn.classList.add('is-danger');
+                    } else {
+                        submitBtn.textContent = 'Enable Account';
+                        submitBtn.classList.remove('is-danger');
+                        submitBtn.classList.add('is-primary');
+                    }*/
+                    closeModal();
+                    document.location.reload();
+
+
+                })
+                .catch(function (err) {
+                    var modalMessage = document.querySelector('.modal-message');
+                    modalMessage.innerHTML = 'Error sending request';
+                })
+        }
+
+        function closeModal(e) {
+            modal.classList.remove('is-active');
+        }
+
+        function formSubmitted(e) {
+            e.preventDefault();
+            username = this.elements.namedItem('username');
+            enabled = this.elements.namedItem('enabled');
+            submitBtn = this.elements.namedItem('submitBtn');
+
+
+            var modalTitle = document.querySelector('.modal-card-title');
+            var modalBody = document.querySelector('.modal-card-body');
+            var sendBody = document.querySelector('#deactivate');
+
+            if (enabled.value == 'false') {
+                modalTitle.innerHTML = 'Activate User Account';
+                modalBody.innerHTML = 'Enable user account? <br> User will be able to send reports'
+                sendBody.textContent = 'Activate';
+                sendBody.classList.add('is-info');
+            } else {
+                modalTitle.innerHTML = 'Deactivate User Account';
+                modalBody.innerHTML = 'Disable user account? <br> User will <strong>not</strong> be able to send reports'
+                sendBody.textContent = 'Deactivate';
+                sendBody.classList.add('is-danger');
+            }
+            modal.classList.add('is-active');
+        }
+
+    }
+
+    window.addEventListener('load', windowLoaded);
+
+    <{{!}}/script>
