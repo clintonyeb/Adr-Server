@@ -22,9 +22,10 @@
         <a class="nav-item">
           <img src="/assets/images/adrlogo.png" alt="ADR logo">
         </a>
-        <a class="nav-item is-tab is-hidden-touch {{menu file 'reports'}}" href="/admin/reports">Reports</a>
-        <a class="nav-item is-tab is-hidden-touch {{menu file 'users'}}" href="/admin/users">Users</a>
-        <a class="nav-item is-tab is-hidden-touch {{menu file 'server-status'}}" href="/admin/server-status">Server Status</a>
+        <a class="nav-item is-tab is-hidden-mobile {{menu file 'index'}}" href="/">Home</a>        
+        <a class="nav-item is-tab is-hidden-mobile {{menu file 'reports'}}" href="/admin/reports">Reports</a>
+        <a class="nav-item is-tab is-hidden-mobile {{menu file 'users'}}" href="/admin/users">Users</a>
+        <a class="nav-item is-tab is-hidden-mobile {{menu file 'server-status'}}" href="/admin/server-status">Server Status</a>
       </div>
       <span class="nav-toggle">
       <span></span>
@@ -32,11 +33,12 @@
       <span></span>
       </span>
       <div class="nav-right nav-menu">
-        <a class="nav-item is-tab is-hidden-desktop {{menu file 'reports'}}" href="/admin/reports">Home</a>
-        <a class="nav-item is-tab is-hidden-desktop {{menu file 'users'}}" href="/admin/users">Users</a>
-        <a class="nav-item is-tab is-hidden-desktop {{menu file 'server-status'}}" href="/admin/server-status">Server Status</a>
+        <a class="nav-item is-tab is-hidden-tablet {{menu file 'index'}}" href="/">Home</a>                
+        <a class="nav-item is-tab is-hidden-tablet {{menu file 'reports'}}" href="/admin/reports">Home</a>
+        <a class="nav-item is-tab is-hidden-tablet {{menu file 'users'}}" href="/admin/users">Users</a>
+        <a class="nav-item is-tab is-hidden-tablet {{menu file 'server-status'}}" href="/admin/server-status">Server Status</a>
 
-        <a class="nav-item is-tab" href="/admin/logout">
+        <a class="nav-item is-tab {{menu file 'login'}}" href="/admin/logout">
           <i class="fa fa-sign-out" aria-hidden="true" style="margin-right:5px;"></i>{{logoutButton file}}
         </a>
       </div>

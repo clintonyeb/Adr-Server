@@ -1,0 +1,33 @@
+<style>
+    .main-content {
+        min-height: 80%;
+        margin-top: 0;
+    }
+</style>
+<section class="hero is-info is-medium">
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title is-1 is-spaced">
+                Adverse Drug Reaction
+            </h1>
+            <h2 class="subtitle">
+                ADR Admin Website
+            </h2>
+        </div>
+    </div>
+
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+        <nav class="tabs is-fullwidth">
+            <div class="container">
+                <ul>
+                    <li class="is-active"><a class="nav-item is-tab is-hidden-mobile {{menu file 'index'}}" href="/">Home</a></li>
+                    <li><a class="nav-item is-tab is-hidden-mobile {{menu file 'reports'}}" href="/admin/reports">Reports</a></li>
+                    <li><a class="nav-item is-tab is-hidden-mobile {{menu file 'users'}}" href="/admin/users">Users</a></li>
+                    <li><a class="nav-item is-tab is-hidden-mobile {{menu file 'server-status'}}" href="/admin/server-status">Server Status</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
