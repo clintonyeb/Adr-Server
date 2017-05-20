@@ -1,5 +1,3 @@
-let c = function (t) {
-     d: 'hi'
-}
+let name = 'hi@gmail.com'
 
-console.log(c.d);
+console.log(name.indexOf('@'));
