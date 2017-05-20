@@ -67,6 +67,8 @@
     <div class="container">
       <div class="content has-text-centered">
         <p><strong>ADR Admin Website:</strong> built and maintained by <a href="#">Clinton Yeboah</a></p>
+        <p class="is-hidden-mobile">Desktop view</p>
+        <p class="is-hidden-tablet">Mobile view</p>
       </div>
     </div>
   </footer>
@@ -84,6 +86,8 @@
       navToggle.classList.toggle('is-active');
       navMenu.classList.toggle('is-active');
     }
+
+    // DOM Events
     navToggle.addEventListener('click', openNavMobile);
   }
 
