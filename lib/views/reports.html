@@ -1,8 +1,47 @@
+<div class="container" id="search">
+    <form method="POST" action="/admin/reports/search">
+        <div class="field has-addons has-addons-right">
+
+            <p class="control">
+                <span class="select">
+                            <select name="search-by" required>
+                                <option value="user" selected>User</option>
+                                <option value="patient-name">Patient Name</option>
+                                <option value="patient-id">Patient ID</option>
+                            </select>
+                        </span>
+            </p>
+
+            <p class="control">
+                <span class="select">
+                            <select name="sort-by" required>
+                                <option value="date-asc">Date (Ascending)</option>
+                                <option value="date-desc" selected>Date (Descending)</option>
+                            </select>
+                        </span>
+            </p>
+
+            <p class="control">
+                <input class="input" type="text" value="{{extra.search-key}}" placeholder="Search for reports" name="search-key" required>
+            </p>
+
+            <p class="control">
+                <button type="submit" class="button is-info">Search</button>
+            </p>
+
+        </div>
+    </form>
+    <hr>
+</div>
+
 <div class="columns">
 
-    <div class="column">
+    <div class="column page">
         <nav class="pagination is-small">
             <a href="/admin/reports/{{minus page}}" class="pagination-previous" {{prevButton page}}>Previous</a>
+        </nav>
+        <nav class="pagination is-small">
+            <a href="/admin/reports/{{minus page}}" class="pagination-previous bottom" {{prevButton page}}>Previous</a>
         </nav>
     </div>
 
@@ -44,12 +83,15 @@
         {{/each}}
     </div>
 
-    <div class="column">
+    <div class="column page">
         <nav class="pagination is-small">
             <a href="/admin/reports/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
         </nav>
+        <nav class="pagination is-small">
+            <a href="/admin/reports/{{plus page}}" class="pagination-next bottom" {{nextButton limit}}>Next page</a>
+        </nav>
     </div>
 </div>
-<script> 
-  document.title = 'Reports  | ADR-ADMIN';
-<{{!}}/script>
+<script>
+    document.title = 'Reports  | ADR-ADMIN';
+    <{{!}}/script>

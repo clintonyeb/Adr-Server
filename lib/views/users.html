@@ -1,8 +1,67 @@
+<div class="container" id="search">
+    <form method="POST" action="/admin/users/search">
+        <div class="field has-addons has-addons-centered">
+
+            <p class="control" style="margin:5px auto;">
+                <strong class="text-primary" style="margin-right:2px;">User status:</strong>
+                <label class="radio">
+                    <input checked type="radio" name="enabled" value="all">
+                     All
+                </label>
+                <label class="radio">
+                    <input type="radio" name="enabled" value="true">
+                     Enabled
+                </label>
+                <label class="radio">
+                    <input type="radio" name="enabled" value="false">
+                     Disabled
+                </label>
+            </p>
+
+            <p class="control">
+                <span class="select">
+                            <select name="search-by" required>
+                                <option value="name" selected>Name</option>
+                                <option value="email">Email Id</option>
+                                <option value="mobile">Mobile Number</option>
+                                <option value="designation">Designation</option>
+                                <option value="organization">Organization</option>
+                            </select>
+                </span>
+            </p>
+
+            <p class="control">
+                <span class="select">
+                            <select name="sort-by" required>
+                                <option value="date-asc">Date (Ascending)</option>
+                                <option value="date-desc" selected>Date (Descending)</option>
+                                <option value="alpha-asc" disabled>Alphabetically (Ascending)</option>
+                                <option value="alpha-desc" disabled>Alphabetically (Descending)</option>
+                            </select>
+                        </span>
+            </p>
+
+            <p class="control">
+                <input class="input" value="{{extra.search-key}}" type="text" placeholder="Search for users" name="search-key" required>
+            </p>
+
+            <p class="control">
+                <button type="submit" class="button is-info">Search</button>
+            </p>
+
+        </div>
+    </form>
+    <hr>
+</div>
+
 <div class="columns">
 
     <div class="column">
         <nav class="pagination is-small">
             <a href="/admin/users/{{minus page}}" class="pagination-previous" {{prevButton page}}>Previous</a>
+        </nav>
+        <nav class="pagination is-small">
+            <a href="/admin/users/{{minus page}}" class="pagination-previous bottom" {{prevButton page}}>Previous</a>
         </nav>
     </div>
 
@@ -22,7 +81,7 @@
                                 <strong>Name: {{this.fullName}}</strong>
                             </p>
                             <p>
-                                Enabled: <span style="color: {{statusText this.enabled}};">{{this.enabled}}</span>  
+                                Enabled: <span style="color: {{statusText this.enabled}};">{{this.enabled}}</span>
                             </p>
                         </div>
                         <div class="column">
@@ -46,6 +105,9 @@
     <div class="column">
         <nav class="pagination is-small">
             <a href="/admin/users/{{plus page}}" class="pagination-next" {{nextButton limit}}>Next page</a>
+        </nav>
+        <nav class="pagination is-small">
+            <a href="/admin/users/{{plus page}}" class="pagination-next bottom" {{nextButton limit}}>Next page</a>
         </nav>
     </div>
 </div>

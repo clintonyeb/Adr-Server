@@ -6,10 +6,15 @@ html, body {
     width: 100%;
 }
 .main-content {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      min-height: 80%;
-    }
+    margin-top: 20px;   
+    margin-bottom: 20px;
+    min-height: 80%;
+}
+
+
+#search, .main-content {
+    margin-bottom: 30px;    
+}
 
 .message {
         color: orangered;
@@ -19,4 +24,13 @@ html, body {
     max-height: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.page {
+    position: relative;
+}
+
+.pagination .bottom {
+    position: absolute;
+    bottom: 0;
 }

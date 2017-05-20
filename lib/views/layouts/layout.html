@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <style>
-    
+
   </style>
 </head>
 
@@ -37,7 +37,7 @@
         <a class="nav-item is-tab is-hidden-desktop {{menu file 'server-status'}}" href="/admin/server-status">Server Status</a>
 
         <a class="nav-item is-tab" href="/admin/logout">
-          <i class="fa fa-sign-out" aria-hidden="true"></i> {{logoutButton file}}
+          <i class="fa fa-sign-out" aria-hidden="true" style="margin-right:5px;"></i>{{logoutButton file}}
         </a>
       </div>
     </div>
@@ -45,21 +45,21 @@
 
   <div class="container main-content">
     <div class="modal">
-            <div class="modal-background"></div>
-            <div class="modal-content">
-                <header class="modal-card-head">
-                    <p class="modal-card-title"></p>
-                    <button class="delete class close-modal-ref"></button>
-                </header>
-                <section class="modal-card-body"></section>
-                <footer class="modal-card-foot">
-                    <a class="button" id="deactivate"></a>
-                    <a class="button close-modal-ref is-success">Cancel</a>
-                    <span class="modal-message"></span>
-                </footer>
-            </div>
-            <button class="modal-close close-modal-ref"></button>
-        </div>
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <header class="modal-card-head">
+          <p class="modal-card-title"></p>
+          <button class="delete class close-modal-ref"></button>
+        </header>
+        <section class="modal-card-body"></section>
+        <footer class="modal-card-foot">
+          <a class="button" id="deactivate"></a>
+          <a class="button close-modal-ref is-success">Cancel</a>
+          <span class="modal-message"></span>
+        </footer>
+      </div>
+      <button class="modal-close close-modal-ref"></button>
+    </div>
     {{{content}}}
   </div>
 
@@ -67,33 +67,29 @@
     <div class="container">
       <div class="content has-text-centered">
         <p><strong>ADR Admin Website:</strong> built and maintained by <a href="#">Clinton Yeboah</a></p>
-        <p class="is-hidden-touch">Desktop view</p>
-        <p class="is-hidden-desktop">Mobile view</p>
       </div>
     </div>
   </footer>
 
-<script>
-  
-  function windowLoaded(params) {
-    
-    // DOM Elements
-    var navToggle = document.querySelector('.nav-toggle');
-    var navMenu = document.querySelector('.nav-menu');
+  <script>
+    function windowLoaded(params) {
 
-    // Open mobile nav menu
-    function openNavMobile(e) {
-      navToggle.classList.toggle('is-active');
-      navMenu.classList.toggle('is-active');
+      // DOM Elements
+      var navToggle = document.querySelector('.nav-toggle');
+      var navMenu = document.querySelector('.nav-menu');
+
+      // Open mobile nav menu
+      function openNavMobile(e) {
+        navToggle.classList.toggle('is-active');
+        navMenu.classList.toggle('is-active');
+      }
+
+      // DOM Events
+      navToggle.addEventListener('click', openNavMobile);
     }
 
-    // DOM Events
-    navToggle.addEventListener('click', openNavMobile);
-  }
-
-  window.addEventListener('load', windowLoaded);
-<{{!}}/script>
+    window.addEventListener('load', windowLoaded);
+    <{{!}}/script>
 
 </body>
-
 </html>
